@@ -2,23 +2,57 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies
 
 ```bash
+
+pnpm install 
+# or
+yarn dev
+```
+
+then run the development server:
+
+```bash
+pnpm dev
+# or
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Acceptance criteria
+Please provide an application that satisfies the following criteria:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Uses https://anapioficeandfire.com/ as a data source
+
+- Is built using your tech stack of choice
+
+- The Houses resource from the API (https://anapioficeandfire.com/api/houses) is paginated by default to 10 results, for these 10 houses please display a list of all of their Sworn Members grouped by house
+
+- For each Sworn Member display their full name and whether they are alive or dead
+
+- If a character is dead, please display the information provided by the API about their death
+
+- If a house has no Sworn Members, please display the message "This house has no sworn members"
+
+- You are welcome to use tools like ChatGPT if that is a part of your daily workflow but please be prepared to defend your choice to use those tools and provide alternate methods if requested on review
+
+
+
+## Challenges
+It was a fun project, I was used to the Next.js pages router, and I had the opportunity to try the new app router, and learn a few things about it.
+
+At the begining I was trying to check why all the characters were alive, and then I checked the API, and I found a bug in that "died" property, is always empty,
+but anyway I added the check just in case it gets fixed, you can check this example: khal drogo should be dead
+https://anapioficeandfire.com/api/characters/1346.
+
+Also I wanted to add pagination, I wasnt sure if was part of the test, but then I checked in the API docs, the total pages is in the headers link,
+it was a bit tricky to get that number from that string, but I got some help from chatGPT in that part.
+
 
 ## Learn More
 

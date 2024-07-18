@@ -10,7 +10,13 @@ type FetchDataOptions = {
   params?: { page: number };
 };
 
-async function fetchData({
+export type House = {
+  url: string;
+  name: string;
+  swornMembers: string[];
+};
+
+export async function fetchData({
   url,
   method = 'GET',
   headers,
@@ -31,9 +37,7 @@ async function fetchData({
 }
 
 async function Home() {
-  const { data } = await fetchData({ url: BASE_URL });
-
-  console.log('data', data);
+  const { data: houses } = await fetchData({ url: BASE_URL });
 
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -43,7 +47,7 @@ async function Home() {
         </h1>
       </div>
 
-      <Houses houses={[]} />
+      <Houses houses={houses} />
     </main>
   );
 }

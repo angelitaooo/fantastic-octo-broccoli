@@ -34,8 +34,6 @@ async function fetchHousesAndMembers({ houses }: { houses: House[] }) {
 async function Houses({ houses }: { houses: House[] }) {
   const { housesWithMembers } = await fetchHousesAndMembers({ houses });
 
-  console.log('housesWithMembers', housesWithMembers);
-
   return (
     <div>
       <ul role="list" className="space-y-3">

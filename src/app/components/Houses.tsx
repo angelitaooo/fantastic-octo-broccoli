@@ -1,4 +1,5 @@
-import { House, fetchData } from '../page';
+import { House } from '../page';
+import { fetchData } from '../utils';
 
 interface Character {
   url: string;

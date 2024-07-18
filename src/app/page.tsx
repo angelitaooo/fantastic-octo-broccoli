@@ -1,40 +1,13 @@
 import Houses from './components/Houses';
-import axios, { AxiosResponse } from 'axios';
+import { fetchData } from './utils';
 
 const BASE_URL = 'https://www.anapioficeandfire.com/api/houses';
-
-type FetchDataOptions = {
-  url: string;
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
-  headers?: Record<string, string>;
-  params?: { page: number };
-};
 
 export type House = {
   url: string;
   name: string;
   swornMembers: string[];
 };
-
-export async function fetchData({
-  url,
-  method = 'GET',
-  headers,
-  params,
-}: FetchDataOptions) {
-  try {
-    const response: AxiosResponse = await axios({
-      url,
-      method,
-      headers,
-      params,
-    });
-
-    return { data: response.data };
-  } catch (error: any) {
-    throw new Error(error.message);
-  }
-}
 
 async function Home() {
   const { data: houses } = await fetchData({ url: BASE_URL });

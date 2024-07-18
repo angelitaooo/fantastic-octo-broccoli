@@ -37,7 +37,31 @@ async function Houses({ houses }: { houses: House[] }) {
 
   return (
     <div>
-      <ul role="list" className="space-y-3"></ul>
+      <ul role="list" className="space-y-3">
+        {housesWithMembers.map((house) => (
+          <li
+            key={house.url}
+            className="overflow-hidden rounded-md bg-blue-50 px-6 py-4 shadow"
+          >
+            <h1 className="text-lg font-bold">{house.name}</h1>
+            <h2 className="font-bold">Sworn Members:</h2>
+            <ul>
+              {house.swornMembers.length === 0
+                ? 'This house has no sworn members'
+                : house.swornMembers.map((member) => (
+                    <li
+                      key={member.url}
+                      role="list"
+                      className="flex justify-between"
+                    >
+                      <span>{member.name}</span>
+                      <span>{member.died === '' ? 'Alive' : member.died}</span>
+                    </li>
+                  ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

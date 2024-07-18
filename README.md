@@ -6,7 +6,7 @@ First, install dependencies
 
 ```bash
 
-pnpm install 
+pnpm install
 # or
 yarn dev
 ```
@@ -25,6 +25,7 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Acceptance criteria
+
 Please provide an application that satisfies the following criteria:
 
 - Uses https://anapioficeandfire.com/ as a data source
@@ -41,9 +42,8 @@ Please provide an application that satisfies the following criteria:
 
 - You are welcome to use tools like ChatGPT if that is a part of your daily workflow but please be prepared to defend your choice to use those tools and provide alternate methods if requested on review
 
-
-
 ## Challenges
+
 It was a fun project, I was used to the Next.js pages router, and I had the opportunity to try the new app router, and learn a few things about it.
 
 At the begining I was trying to check why all the characters were alive, and then I checked the API, and I found a bug in that "died" property, is always empty,
@@ -53,6 +53,8 @@ https://anapioficeandfire.com/api/characters/1346.
 Also I wanted to add pagination, I wasnt sure if was part of the test, but then I checked in the API docs, the total pages is in the headers link,
 it was a bit tricky to get that number from that string, but I got some help from chatGPT in that part.
 
+5-minute solution walkthrough recording here:
+https://www.loom.com/share/69803ba3db7c4e5babcf87333f7a4b31?sid=cda65ff3-ca34-48fe-9740-0554f2a72db1
 
 ## Learn More
 

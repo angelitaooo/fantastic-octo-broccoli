@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Houses from "./components/Houses";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
        <h1 className="font-serif text-4xl pt-16 text-indigo-200">GAME OF THRONES</h1>
       </div>
 
+      <Houses houses={[]} />
       
     </main>
   );
